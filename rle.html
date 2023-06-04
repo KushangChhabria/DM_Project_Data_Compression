@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Compression | Run-length Encoding</title>
+    <link rel="stylesheet" href="rle.css">
+    <style>
+  
+        
+    </style>
+</head>
+<body>
+    <div class="parallax"></div>
+    <section class="header">
+        <nav>
+            <a href="index.html"><img class="newImage" src="logo-final.jpeg" alt=""></a>
+            <div id="text">
+                <a href="index.html"><p>SC205 GROUP PROJECT</p></a>
+            </div>
+            <div class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li>
+                        <div class="dropdown">
+                            <button class="dropbtn">Analysis</button>
+                    <div class="dropdown-content">
+                        <a href="introduction.html">Introduction</a>
+                        <a href="ste.html">Shanon's Theory of Entropy</a>
+                        <a href="Huffman.html">Huffman Coding</a>
+                        <a href="rle.html">Run-Length Encoding</a>
+                        <a href="arithmetic.html">Arithmetic Coding</a>
+                        <a href="lzwc.html">Lempel-Ziv-Welch Compression</a>
+                    </div>
+                    <span class="dropdown-icon"></span>
+                    </div>
+                </li>
+                    <!-- <li><a href="Appraoch.html">Approach</a></li> -->
+                    <li><a href="application.html">Applications</a></li>
+                    <li><a href="Appraoch.html">Approach</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="attachments.html">Attachments</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="one">
+            <img src="zeros.png">
+            <img src="ones.png">
+            <img src="zeros.png">
+            <img src="ones.png">
+            <img src="zeros.png">
+            <img src="ones.png">
+            <img src="zeros.png">
+            <img src="ones.png">
+        </div>
+    
+    <div class="text-box">
+        <h1>Run-length Encoding</h1>
+        <p><em>I'm not afraid of problem solving. There's always a data !</em></p>
+        
+    </div>
+    <a href="#scroll">
+        <div class="scroll"></div>
+    </a>
+</section>
+<section id="scroll">
+    <section class="intro">
+        <div class="content">
+            <h2>RUN-LENGTH ENCODING</h2>
+            <br>
+            <br>
+            <p>Run-length encoding is a compression method in which
+                strings exhibiting redundant data are stored as a single data
+                value representing a repeated block and the number of times
+                it appears in the image. The image can then be rebuilt from
+                this data during the decompression process.
+                This compression type is best for simple graphics and animations with lots of unnecessary pixels. It works especially
+                well with black-and-white images.
+                </p>
+                <br>
+                <h2>Advantages</h2>
+                <br>
+                <br>
+                <br>
+                <ul>
+                    <li>It’s easy to implement and can be applied to various
+                        data types.</li>
+                        <br>
+                        <li>It’s very fast and can be used in real-life applications.</li>
+                        <br>
+                        <li>Time complexity : O(n)</li>
+                </ul>
+                <br>
+                <h2>Drawbacks</h2>
+                <br>
+                <br>
+                <br>
+                <ul>
+                    <li>To access anything we have to first decode the data to
+                        get the original data as the original data isn’t accessible
+                        immediately</li>
+                        <br>
+                        <li>The size of the data we get after decoding cannot be
+                            predicted at earlier stages, which causes problems if we
+                            have limited storage capacity.</li>
+                            <br>
+                </ul> 
+
+                <br>
+                <h2>C++ Program to implement Run-Length Encoding: </h2>
+                <br>
+                <br>
+                <br>
+                <img class="image1" src="data:image/png;base64,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" alt="">
+                <p> #include &lt;iostream&gt; <br>
+                    #include &lt;bits/stdc++.h&gt; <br>
+                    using namespace std;<br>
+                     <br>
+                    void printRLE(string str) <br>
+                    {<br>
+                        int n = str.length();<br>
+                        for (int i = 0; i < n; i++) {<br>
+                     <br>
+                            // Count occurrences of current character <br>
+                            <br>
+                            int count = 1; <br>
+                            while (i < n - 1 && str[i] == str[i + 1]) { <br>
+                                count++; <br>
+                                i++;<br>
+                            }<br>
+                            <br>
+                            // Print character and its count <br>
+                            <br>
+                            cout << str[i] << count; <br>
+                        } <br>
+                    } <br>
+                    <br>
+                    //Driver code <br>
+        
+                    <br>
+                    int main() <br>
+                    { <br>
+                        string str = "wwwwaaadexxxxxxywww"; <br>
+                        printRLE(str); <br>
+                        return 0; <br>
+                    } <br></p>
+                <p>Output: w4a3d1e1x6y1w3</p>
+                 <img class= "image2"src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAP8AAADGCAMAAAAqo6adAAAAflBMVEX///8AAADd3d2ysrJycnL19fUmJibX19ePj4+rq6t7e3s1NTVMTEyLi4s6OjqamprIyMjj4+NAQEANDQ1hYWGgoKDw8PC9vb3p6en5+fnPz8/g4ODs7OxTU1OmpqbAwMCCgoJYWFhubm5jY2NEREQtLS0fHx8pKSkXFxcSEhJF6qN8AAAWJElEQVR4nO2di2KiOhBABwINTwlWAglv0Xb3/3/wzgS1rVWrrUW7t7NblRAghzxIJpMB4Ivi3p2oryJdIrZ1d+JMyv845dXOEbaY8mq//FNe7Rz55Z/yar/8U17tHLkpf8rwIwuY73H8oX3fa5jDmKc3YZmDQRIoLIvp8BZAJQFrMlV2HktayJ2GeekmzJwqUUUXs4RB5XUs80EHGZ4Qj2MsSfA7x6/2TvjZM364If71AnxMlZ7BygVbKBOmYQZQzAEiF4D4G/wNRQQgHGgagKCFqAB3vQ2jU/Eecg/AY0iORyTgIHSfQiABlgyCAqBL7oNfsSTHzxXdhAiWFCSgV7LYhSEWPCnoXaACUokOWWSNvyJgyN9kMCDPTG7C6DA1A4H8eQwc+bUDMR4TaJbTGW3h01X0Sxpuyd+6CgFdYoW5HYyBNXP4JgwLQ87CnMLaCPupuSrwJsmw9dccK0UbY+CiyWtvG6bwKxQghtYLFfCoTcIKYq9dLmFpm7N3Gt7KLfk7256XG9ZQbvh7ybb8IRZ8RJbQV6Z0BDYPJUjMZ74Elpn8X5RKOqU7hqk5KHupRAyK8t8B1QYQC6ViEY/8yR3x85zbeTeWdduBnsI0lXW1C6Py3zATxkEIbvuJKf+wTKn8w9yUfx0rE2abw2JN5R/WYErU3JT/amgbc3pNu7CW7eSG/JQ89aeQT5igGmt4pwBTua4wuBrDFLaPaS1hLaHqgUYq0lIpNoq6hwzzP/NgloLs7WIMo1PxWjFsK1kAAstMjiVfgApy8HJQXgn4RICE3wM/Z1gk7Zwx/G8yBJ9QNrDcx8Z+E+bjF1Nmi6WalVRmTPwcbAxiGnLaVakxbIyIT1VzdEFfLWgKK831qAmEkuXuqxT99n+mvNov/5RXO0d++ae82v+e3yr5VUSL65zHTiblL9fhVWT2x5pd50xhPCX/1cR/uHUKbivN061TcFv55b91Cm4rx/mlGqZMyI3kIL/kEhqdLeTRw7jWgkZdWlQ0GMYtfjTuXctBfnsloHT4bkZPvIvhzoXrZaBqUryqBy5p4PwT5XD59wRkZewQtyuVGCqQBXLS6BfMBzg2qUSMTgRId6KqqVJ8XTnKL1NV4fg+dfLY7+02SxIZ5LWvPJ9UROCU4HlbNeCigKyYMtXXk6P8G+ErWdgBJFL2TQuJZp1YUVUPPIuU/xv+hK3+tfzfCo885JcJGwonHdyGFO0Y7KScdITE71L+83+U3y4h0k6B1X1hJ60EEQKj/MeAIBn5O+KHYLIkX1EUZA+g3lmuFMvdYMaOGx/qRMf5kMz7aAnJnCZ9RO8VsPDY4DHPE3XmJz9x+GP/WT9Z4ZN3Xmy6TT+0lB+ThbHcOd7N+dfFmFF1t07FDaVH/n+sTF8k/P+d/dh1/Zm1X/rXERbP2JVO9X6Q9I3CrS64inRXOk8QTav//jvl1c6R/Hf+Y0L55Z/yaufIL/+UV3vN/3r4Rr9dtVmMMH7sflO4+/JzG6ze/B433owI3Zf46vUp38rN+Pmcmet3FFwnoJI/og1wTOdbmPLWF8mDAIbdHGYJEQhIcMS/jULH2s+JSPBgipJGsRBh6gZkLwWKLlIG7QK05YvYw1HvvMaITHh/36l7b5f/zcg/p0zJM8wsUtAlPsBMgU1j26wFiLCbh1ASO/urV1HoWKPDEGOULMfRvwuFgfG91uzBCKThWLm4sxccLwHxvfFz29ix5QmQXR+QzR9ZwC6NWhLvTG348xTG27CNsuF3V+UYBfltugUGhrk9jvgthvdwUUFqNEVJ2h9e6HNj/sZwveKfGf7FdnBHmbvyV3Q7oldR6Ni4Y4GziZIFbLnlFwUMeL8aS5CG0x+MsW8M0T3yq6Fp5vw9v7NVS4/lXxzip/IvujFKkkMqNvxd1gQdNiAFNgxU/huqLxLuLv99ZCBr5HT5qv53WHVXCnhHkcnyF9vCeoxfv4pCx9IcRrkco1D95xqKAe8BDWjmEJv6P2A5ahPIK+CCygF/N9q5Gb+sB2ifsKBqK5PLWqnYYszJaZsM4WOf8o1bDDKrMU2kpXdR6Fj93LEM6wlF4bPAZw8uJI+FDPHWuOueL/HJ0loJ85Z4htVDA63nj03uG/nt/0x5tV/+Ka92jvxY/vI6p5mY/3r6D8v9OM4ZMq3+g1t1dCWxrnOah0n5lX01+avLq5znhxoAwN8fqQC/njz+8v+v5Zf/1im4rfwYfhqjf4N8hV/o/WWgRvJ9ixIZ2GecTTWM+ccfo4V1QcrOl6/w60OdxyJNo/2w6OB92pd0Bao/fqe+x1T7K89/s0521KpKoJyr8FfAitps4J2AtAI3JR0L7ilwZ4VXK465CqIVuXlSCCjxP2iKlq38NCqLuPMBHsBbgp5LN3EEMO/dEuTqU2t5rIuPein04/JqzRzWzrp5DE3jOWKR2FG3Ji1x0EOXp7G/hE63K2jnINhCeMw5UshlpPTKlTNXhvzJCchJAcxdyEhlbRE/FYGldKrcwu18XwcVf2Ytzyy89KDZ064ibpbct0kPa1op/UQfsXbn4JrEh5AAszHhnXYjUjiGwguGvDpSAOSc0bi2l9DTUm2jac0azaEs/JEf/y/dP1poiMN8/3DvXbX7Hmnf8ruIbmrCHHMbG2lkrY1yFQuAwEQmLNyEzUnljumcpYdPjOW/w3KD6AtzE4i/WPmKnDCsX/gtM0dR1fsmh1Px5zt+Nad10LUPARmDh+AJM5eit/zUPjYM9wUa9/I5POSkdtVHLA4l3sQnAYPQ6yKSYGZ0YJWQYwr1R1MVsDh71sNQLrGE2PvrM6bnT2qf9baKorSdyzzSQ13PBF85vWIRzRApzKLSaYd8kUA25z2XUSS9xjtc/90sZpAGLA2033Q274yWVZBq1xOJneO2cHjOIAlKaPxs/9kzPf+eyITcykyTiANye/55uAom9YP3Irzz6mcvfq+Yv74c5Tft0o3EHb3wTbEM6QT/DSUh/EmUcPfJr4j/nGHGl+U++SGzrGlWLN4pv/t3ktp/t/yQ9NNc51751RS1X47PmW6CS92neJOsmeHJt8qRAdg5Yjoa377aKwu9b5THd2PnC8SbYs1M1n3n2fuv8LtT1P7sW9dT1l/hxwLw/b38e+aXE6z1vAH/+QuBLl8ydPH9vgG/tbzSUqD3MlxsrnML/i88FD+Q8mv8ZLacBw0z/oYLxrysxa2GtWNY5cUsIze9DfNJ/aJI984C309owgGje/u9lcP839d9vNxc6w3/ghqcqAAVJ1B6xnknOSNOtmHkoDjLSMkKCaKKOfGuXKhmQN5gXWtf3/iz+NuCZgIWxnZZDaRf02S0y7dh0h4dFHfazD9BZkx0e3xIhWpJjyr+s/O/MWbKhtXTGz8zcUJ+W8cwbtciIwfFSUvrGHhplO81y6MMDrs3+1H8ZWaLcMMal/MxMBb2lj/mtqNU25GpdqPN/RjwNvQFuTw+7JbnI/6tSwh1cBNOb7p72/BFfl8jIDcOiiEyluggCyz/ErZhrxwUp5VsOOfRWP5zP6BGXe3rRT7g36z/gXZUqOxt4vjftCfVcnloM2ipbYKyj8JdtfsKf0GVWUcwKyCtObgOfsfkjBhlEyYcTNwAS7zu4JrGPtQQYvvXp7Asoej2dfIf5X+x0aM6/NAmFq2RyjmwaQ9jdrRUR6/Bz8iPccuw08Vyw5H7AgTzS3LBb8IK2tdiGH6JlBZiF+TUGEPpVgi/fXf2c/kDfmjzJD9ESbAZHojdZMQXn39Xl+/kt9fbpL/Mcv6P+N0lzMZ8z1/O9+P4N4r0jdnS3uZ2Vdn2TQNvNu3luOgItA27Zven8SePZiyQPseHNm0rM9+xcTG/v9k1HZWH1lrtKsKP47+2/PJfesQv/3ekYyu//AcC74u/+4Zk7OSg/vu+9D9PzsWyHM6MGFgH+RfnXujsiLsDLuY3ryW5UBbr/NyohwzQzj64s86OupX3Q5BvkJvbf91Yfvmnuc4v//uw5qwFDt8rN+In7aBqL2zhtBbkQL342F6zdFz7vJPfgN8WEvrEKVrvqPu/SmhaMMG1oKUfuCFoYYf9t6qoj3OGteyqOicW3II/7+JH5anGAT5mkTpQDZLOFTW4MxOjS6Q0akRK67MCF//RcoiUvEy5KX6VRntGfTFjTOvKoMI44/Ka9OTE+/T8nLwoBW6QdeRMSbrAAgnVLqXjQh96i56jjcd4MG+blBSMafUXEHTVuutrCNq+yMJlZxVGp686NgcvdwTwhD24Q1KGXT1AzBzvhLuCm9T/hqeqVClC2wFLkmXJ/LgxKU1ZHhEz8osZbPl9KM2rM1eNT/b8ASxs6KsOPCF7iiSpaxrbpM2lFRU1wELmHtQVrIoeilNvGb8F/ytzf9G7BbJ6YC9dk9K5CIyv7MVAMwMb/iULDD+lNRZ2QPntSJEFht926IUSEJTGFREsKrpxEs9Ka2LUwLNThgS34H+9CEOsMu1BlTQBUErdjTkmpn5djPwu5b/L6RhKa6e54R/kGpq8ovi1uZ84+s3EQK7VLQ0r2XrknKiGuD3prOMG/A0SbX9rCQ86LhaVdJRJqWVXpBlEfh2O/J2p/xpbwqb2GZb/eNCRSCOsConXLLA5accGNJjnwJJMQrpyPL9zRMR51Mz6en7CzcIk/DIXsSXa8XHHonr1wu81TEV+7rFFGmJKK75aKnKgh81YMrA+YV1WOp3PjnjQMnJq9YwW498xmYR/s87itM948UFKjx53cp2sfgijo/dHL5azJ2fwL7/oheIT/gfj+ZMpPSHqA8O6UxqaR5Mv36fD2ckfvEzzUaQJ0rEnJl9OPR6veKGnGy3yOilPyD+JE5qnzYTPnUk+lVW+f93xv356voqsLeuyAz67XMT9kvXsOxHr9CoOmMpkuOhE+Z28+lGsrnWmy2p/eS/889tc1z7NX6VfkQvWx9wpv2N9RS7o/dwp//IrGs3kH+D/ygs9vM/wK0a99zx7d+G2OzAb3Lw8vpz9BRmFT8oG3ZxsEO+On9xMA7mY3pceDkxNy5fRnti/PZWDo1KdwElnBHfI31Clw86l3llOyRZH2TOqiq4uRC6r3OVKg12ArI2ytcAIPKC9r89JDoojMpU8cd075M9gRu5+ArvZ5Gjb8JXktTFpLer2Adwuf/ZmcWeBDON6AYzxuUL+sHgz+Cd+xCtPLQi/S/6qhoZ7AKtxABlS5ZempodNBbUUKcxJo9RXVP4fCjzWz+zA7MXCUFWFMUJrjPLUuPU+Kmfzu/G2SrpJsxn5iizeFLidpUpbL3Zl8NP85F2b+Luxxj/jSDoY+cFfSx745GlIJMRfAwwypHpeBrS3ApW3KFTnN+VfnBqnn5//9rap7TgsjApSbT084T3ZmNhXDbBwe8Qn+Umr5GFmKujGWYLYB98ujeP2DjwNYQ7uM3linxVuCHIJTg5ZIZxx74tkjAyfITilTzmff2v/Cv5SbmpUKNi2bXlV8XY9+c/xtx4pExkUmS9HX/3g+xp8jwZcDU0IUHgsWi/1bGgJEiNwyDxp9u5Emv5H25y0aPoEPwTW5okiX1QtL/zFrrh9Mv8/EvfMV1WeJZ/gt/1sU9q98mk7Cn7hf4H+Hv5suObC2wv4t48Rx4ba1H+5gmJb2Hf8TO4mar8p/68q5/PzLSrzxvVnCJ2KDaJ82GRKHPvD9gHwb/ELseXi7TaH2+1u8yJ4IBMIIXaH3Iw/H+vnOY5w7q//I+KGZQWobrdPvuvAOi8q7tnrpzvvEpM1O93khzYjn+f/WLnxyfzvbahWVJ3szcXf91/sl7FO9mqvzFLHaKW3TlKLD7Wbn+Y/w/7rk/w0RzrYbgt9kGptU4cwL23fV7ZfaLwnrMCxDpmauPQSbvb27miT4yF7HCCLsD/ol05zaj7kO/k/qf9wfB4soX0Ej+kg7cDmsWAtW0Dps5k/j7MQ7Llfd7KTXrPHzx7NoHHN1dKjsU8EQX5yOvUj/ddwzHvKYCUfOVi5ZPbvNb8o0s7GznWWywdfga/YXNCLzHyoenqPmRnrqTDW+DHa0pQopnW2HfNODISyI/xUERTz6JQC5AP+/CjcGfzHzcFO89tmGdnKGH9kc6r+EnMzTxqqz4kY+WHAX9jEE3+BDx2x0RbMtvzByK9AnPJT9AH/cbmy/efb9k8FrfwLTRcwqLmApKARx1NKvqG9Fixl1ziwSSPsikLyahrO1cDNCOBPCctCWqCsJhIQnegw3h9/2/is4Thq1W7DhV9iaeA5VgOqxnnDWVNkkvbioLghG5LmhU5l/tgNkQ2OkVgjoGWlbk5NQ98f/xFx9XUn3DbyY/iD73Ep+2P4v0l++T954LT86sCvM+J/HPn++PmycXznbWNXhLuuBDuizioC41A/SYzh8R/TG9Afm8x/mr/9Lv5c4/CFj62du+3cdh91pVTMM0yRgw9+yvRhO3fyka7sc/zVLAqtaH5FF2gv/Mp03xRIzOjESUHZ9EpSw18UEioXyMwDoHzXq6uhqMe3eUJnY1SQbmqVCsoTFnWfzP9xXvxKb80jeVP/KU0ia/siXxaVo0N75BedCN2ZgJnOn8AT6725ac+nOQHjBwpip7daWGQKe4KOiI/PgH2SPyX8U/Mql8o7/oGsOcuO/Id4bOTHgawea8JaimXevx3XNqFVEb+xju+wJ2yBn9CpHrV7PKM+W/+dK/uZ3ufHkQuoB+THPF1u+CF7bIAmxh02lnIgzT/J+LvONfWRqVZ2WP//UHHAU1WL8Pr8xXWz/33+/8UWYLBj4A6w3FDT/PdTir9yvHK7em8mHZekhjZTQJ0Nssc6RJqgEvT66HU/3f4717Wyfc0vLK0g7+24SK1lW9tBVM07DE88vpTzrrC4vSyi1fC6/ruB0A0NkFrTKGeB3aWw7KHu85lgx/vOn+ZPr5r9b/jt1MaHQEHtPrbiaaqkKinElbZyy1KSgR85uXpzgnJ892K6qZSF7eKTo3TdFNz0RDu9z3/BC4AufWPQG9n3nXsv/V9rPZtC3i0duBv+aWzWk7vln+TlCb/8v/xv5Zd/kuu+k3P5OYdKfKROcDWcafN8//yVEwkVzzbj7lw7ojnRjRpFW8DPM7+/f36yp4TR6AplqE6bUW4k/DjKKO/5r7b+4TJJT/NHbl9WdWk/B7Lv2xhHnbouwPYC6bXdOP7MuhZamuqVXhbiwAtH6ZHGUViWn6gK7/mt54dbyNNRfnvFfC+ikTQOuYaCFi17XfEoGL2GsG3YIqXXcUKcupHIIe8gAPcRnFw9CT7jsbG+O5/fvcrqn0/IXn9vP/8Nv6b12QzH3jkOTW0HqjZosDoYw0oqt04J7joNyP1uktNLIFcpjlov4r8XeZX/gZlERn4cUQ9b/jUNyBeV9vOGbCuBTMEYTfQ69N7GkKKML8H0TjYX98/vZlEKfljodbyMXYvB0qmGTll2HsGcJ/UQQODgA1E/B5nb66YEZ5U8it7j+BCw8nncnTK7/QH8aVEA/RWuct2iVClupG5RyAJU6kram1KHQGINUkYZW7gS9xeFqqpcFIV34kVc98//NSE3N6feQ/av838kv/yTXOZyuZX+417kMYgnkNE07D/E4dpg4Fo36AAAAABJRU5ErkJggg==" alt="">
+                
+        </div>
+    </section>
+</section>

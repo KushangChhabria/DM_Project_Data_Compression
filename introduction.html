@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Compression | Introduction</title>
+    <link rel="stylesheet" href="introduction.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+  
+        
+    </style>
+</head>
+<body>
+    <div class="parallax"></div>
+    <section class="header">
+        <nav>
+            <a href="index.html"><img class="newImage" src="logo-final.jpeg" alt=""></a>
+            <div id="text">
+                <a href="index.html"><p>SC205 GROUP PROJECT</p></a>
+            </div>
+            <div class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li>
+                        <div class="dropdown">
+                            <button class="dropbtn">Analysis</button>
+                    <div class="dropdown-content">
+                        <a href="introduction.html">Introduction</a>
+                        <a href="ste.html">Shanon's Theory of Entropy</a>
+                        <a href="Huffman.html">Huffman Coding</a>
+                        <a href="rle.html">Run-Length Encoding</a>
+                        <a href="arithmetic.html">Arithmetic Coding</a>
+                        <a href="lzwc.html">Lempel-Ziv-Welch Compression</a>
+                    </div>
+                    <span class="dropdown-icon"></span>
+                    </div>
+                </li>
+                    <li><a href="application.html">Applications</a></li>
+                    <li><a href="Appraoch.html">Approach</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="attachments.html">Attachments</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="one">
+            <img src="zeros.png">
+            <img src="ones.png">
+            <img src="zeros.png">
+            <img src="ones.png">
+            <img src="zeros.png">
+            <img src="ones.png">
+            <img src="zeros.png">
+            <img src="ones.png">
+        </div>
+    <div class="text-box">
+        <h1>Introduction</h1>
+        <p><em>Getting familiar with Data Compression !</em></p>
+       
+    </div>
+    <a href="#scroll">
+        <div class="scroll"></div>
+    </a>    
+</section>
+
+<section id="scroll">
+    <section class="intro">
+        <div class="content">
+            <h2>What is Data Compression?</h2>
+            <br>
+            <br>
+            <p>In information theory (IT), data compression or source
+                coding reduction is known as the the process of encoding
+                information using fewer bits than the original representation.
+                It enables sending a data object or file quickly over a network
+                and in optimizing storage resources.</p>
+                 <br>
+                <br>
+                <h2>Invented?</h2>
+                <br>
+                <br>
+                <p>With the advent of information theory in the late 1940s,
+                    modern data compression research got underway. In 1949,
+                    Claude Shannon and Robert Fano created a methodical
+                    methodology for allocating codewords based on block probability. David Huffman later 
+                    discovered an ideal approach for doing this in 1951.</p>
+
+                <br>
+                <br>
+                <h2>Types of Data Compression</h2>
+                <br>
+                <br>
+                <br>
+                <br>
+                <ul>
+                    <li><h3>Lossless</h3><br>All of the original data is present as lossless form.
+                            The algorithm compresses the file while preserving the
+                            data necessary to restore it to its original size when
+                            decompressed. For files that would be significantly
+                            damaged or unable to function without all of the original
+                            data, a lossless format is required. These files contain
+                            software programmers, papers, and specific media types
+                            utilised by a variety of creators, including musicians,
+                            filmmakers, and photographers. <br>
+                            <h4>Example: PNG Compression</h4>
+                            <p>PNG (Portable Network Graphics) uses lossless compression, 
+                                which means that the compressed image can be perfectly 
+                                reconstructed from the compressed data.</p>
+                                <ul class="code">
+                                    <li>Color Space Conversion: <br>
+                                        <br>
+                                        PNG typically converts the image from the RGB color space to the
+                                         YCbCr color space. This conversion can be represented by a 
+                                         matrix operation: <br>
+                                         <br>
+                                            ⎡ Y ⎤ = ⎡  0.299  &nbsp;   0.587    &nbsp;  0.114 ⎤   ⎡ R ⎤ <br>
+                                            <br>
+                                            ⎢Cb⎥ = ⎢-0.1687   &nbsp; -0.3313   &nbsp;   0.5   ⎥  ⎢G ⎥  <br>
+                                            <br>
+                                            ⎣Cr⎦ = ⎣  0.5   &nbsp;   -0.4187  &nbsp;  -0.0813 ⎦   ⎣ B ⎦  <br>
+                                        </li>
+                                        <br>
+                                        <li>Discrete Cosine Transform (DCT): <br>
+                                            <br>
+                                            The DCT is applied to blocks of the image to transform spatial 
+                                            information into frequency information. This is done separately for 
+                                            each color component (Y, Cb, Cr) of the image. The DCT operation 
+                                            can be represented by the following equation: <br>
+                                            <br>
+                                            #include &lt;iostream&gt;  <br>
+                                            #include &lt;bits/stdc++.h&gt; <br>
+                                    using namespace std; <br>
+                                    #define pi 3.142857 <br>
+                                    const int m = 8, n = 8; <br>                  
+                                    <br>                  
+                                    // Function to find discrete cosine transform and print it <br>
+                                    <br>
+                                    int dctTransform(int matrix[][n]) <br>
+                                    { <br>
+                                        int i, j, k, l; <br>
+                                    <br>
+                                        // dct will store the discrete cosine transform <br>
+                                        <br> 
+                                        float dct[m][n]; <br>
+                                    
+                                        float ci, cj, dct1, sum; <br>
+                                    
+                                        for (i = 0; i < m; i++) { <br>
+                                            for (j = 0; j < n; j++) { <br>
+                                    <br>
+                                                // ci and cj depends on frequency as well as <br>
+                                                // number of row and columns of specified matrix <br>
+                                                <br>
+                                                if (i == 0) <br>
+                                                    ci = 1 / sqrt(m); <br>
+                                                else <br>
+                                                    ci = sqrt(2) / sqrt(m); <br>
+                                                if (j == 0)  <br>
+                                                    cj = 1 / sqrt(n); <br>
+                                                else <br>
+                                                    cj = sqrt(2) / sqrt(n); <br>
+                                    <br>
+                                                // sum will temporarily store the sum of <br>
+                                                // cosine signals <br>
+                                                <br>
+                                                sum = 0; <br>
+                                                for (k = 0; k < m; k++) { <br>
+                                                    for (l = 0; l < n; l++) { <br>
+                                                        dct1 = matrix[k][l] * <br>
+                                                            cos((2 * k + 1) * i * pi / (2 * m)) * <br>
+                                                            cos((2 * l + 1) * j * pi / (2 * n)); <br>
+                                                        sum = sum + dct1; <br>
+                                                    } <br>
+                                                } <br>
+                                                dct[i][j] = ci * cj * sum; <br>
+                                            } <br>
+                                        } <br>
+                                    
+                                        for (i = 0; i < m; i++) { <br>
+                                            for (j = 0; j < n; j++) { <br>
+                                                printf("%f\t", dct[i][j]); <br>
+                                            } <br>
+                                            printf("\n"); <br>
+
+                                        } <br>
+                                    } <br>
+                                    <br>
+                                    // Driver code <br>
+                                    <br>
+                                    int main() <br>
+                                    { <br>
+                                        int matrix[m][n] = { { 255, 255, 255, 255, 255, 255, 255, 255 }, <br>
+                                                            { 255, 255, 255, 255, 255, 255, 255, 255 }, <br>
+                                                            { 255, 255, 255, 255, 255, 255, 255, 255 }, <br>
+                                                            { 255, 255, 255, 255, 255, 255, 255, 255 }, <br>
+                                                            { 255, 255, 255, 255, 255, 255, 255, 255 }, <br>
+                                                            { 255, 255, 255, 255, 255, 255, 255, 255 }, <br>
+                                                            { 255, 255, 255, 255, 255, 255, 255, 255 }, <br>
+                                                            { 255, 255, 255, 255, 255, 255, 255, 255 } }; <br>
+                                        dctTransform(matrix); <br>
+                                        return 0; <br>
+                                    } <br>
+                                    F(u,v) = 1/4 * C(u) * C(v) * ∑[x=0 to 7] ∑[y=0 to 7] f(x, y) * cos[(2x + 1)uπ/16] * cos[(2y + 1)vπ/16] <br>
+                                    <br>
+                                    where F(u,v) represents the transformed coefficients, C(u) and C(v) 
+                                    are normalization factors, f(x,y) are the pixel intensities, and (u,v) represent the frequency domain.
+
+                                            </li>
+                                </ul>
+
+                    </li>
+                    <br>
+                    <li><h3>Lossy</h3><br>Even further file size reduction is possible with lossy
+                        compression, although there will be a little information
+                        loss. For file types where missing information are barely
+                        noticeable, this format is appropriate. Media downloaded by the user, such as songs, videos, and photos, is
+                        included in these files. There is a slight drop in playback
+                        quality for these, but the user is unlikely to notice.</li>
+                        <br>
+                        
+                        <img class="img2" src="img2.png" alt="">
+                </ul>
+
+                <h2>How Data Compression Work?</h2>
+                <br>
+                <br>
+                <p>Depending on the kind of data you wish to compress, there
+                    are typically four different forms of compression. Which are:</p>
+                    <br>
+                    <ul>
+                        <li><h3>Text</h3><br>To reduce the size of text files, redundancies and patterns must be found in the content and encoded using
+                            shorter codes or symbols. The type of text and necessary
+                            compression ratio determines how well a compression
+                            algorithm works.</li>
+                            <br>
+                            <li><h3>Picture</h3><br>Similar to text compression, picture compression looks
+                                for patterns and duplication in the file and shortens the codes and symbols. For instance, it might detect
+                                a pattern of colours that repeats itself and generate a
+                                code using the colour and the number of instances that
+                                equals one unit of the original.</li>
+                                <br>
+                                <li><h3>Audio</h3><br>Audio files on computers allow you to listen to music,
+                                    but they hardly ever include other kinds of information.
+                                    Utilising lossy techniques, which eliminate both background noise and white noise from the files, is the main
+                                    approach for compressing audio recordings.
+                                    </li>
+                                    <br>
+                                    <li><h3>Video</h3><br>A particular procedure is required to compress video
+                                        files because they may also contain audio and image files. Videos employ both audio and image data,
+                                        therefore background noise must be removed while
+                                        preserving the most crucial portions of the movie using
+                                        a combination of lossy techniques.</li>
+                    </ul>
+                    
+        </div>
+
+    </section>
+
+</section>

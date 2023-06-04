@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Compression | Arithmetic Coding</title>
+    <link rel="stylesheet" href="arithmetic.css">
+    <style>
+  
+        
+    </style>
+</head>
+<body>
+    <div class="parallax"></div>
+    <section class="header">
+        <nav>
+            <a href="index.html"><img class="newImage" src="logo-final.jpeg" alt=""></a>
+            <div id="text">
+                <a href="index.html"><p>SC205 GROUP PROJECT</p></a>
+            </div>
+            <div class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li>
+                        <div class="dropdown">
+                            <button class="dropbtn">Analysis</button>
+                    <div class="dropdown-content">
+                        <a href="introduction.html">Introduction</a>
+                        <a href="ste.html">Shanon's Theory of Entropy</a>
+                        <a href="Huffman.html">Huffman Coding</a>
+                        <a href="rle.html">Run-Length Encoding</a>
+                        <a href="arithmetic.html">Arithmetic Coding</a>
+                        <a href="lzwc.html">Lempel-Ziv-Welch Compression</a>
+                    </div>
+                    <span class="dropdown-icon"></span>
+                    </div>
+                </li>
+                    <!-- <li><a href="Appraoch.html">Approach</a></li> -->
+                    <li><a href="application.html">Applications</a></li>
+                    <li><a href="Appraoch.html">Approach</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="attachments.html">Attachments</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="one">
+            <img src="zeros.png">
+            <img src="ones.png">
+            <img src="zeros.png">
+            <img src="ones.png">
+            <img src="zeros.png">
+            <img src="ones.png">
+            <img src="zeros.png">
+            <img src="ones.png">
+        </div>
+    
+    <div class="text-box">
+        <h1>Arithmetic Coding</h1>
+        <p><em>For the data that knows no boundaries !</em></p>
+        
+    </div>
+    <a href="#scroll">
+        <div class="scroll"></div>
+    </a>
+    </section>
+    <section id="scroll">
+        <section class="intro">
+            <div class="content">
+                <h2>Arithmetic Coding</h2>
+                <br>
+                <br>
+                <p>Arithmetic coding is a lossless data compression technique
+                    that maps a sequence of symbols to a single fractional
+                    number in the interval [0,1], which can then be represented
+                    using fewer bits than the original symbols, thus reducing the
+                    overall file size.<br>
+                    <br>
+                    A fundamental concept in arithmetic coding, probability
+                    distributions determine the likelihood of a symbol appearing
+                    in the data stream and are used to calculate cumulative
+                    probabilities for encoding.
+
+                    </p>
+                    <br>
+                    <h2>Implementation of Arithmetic Coding</h2>
+                    <br>
+                    <br>
+                    <br>
+                    <h3>Encoding and Decoding Processes:</h3>
+                    <br>
+                    <ul>
+                        <li>Step 1: Symbol Probability Calculation
+                            The frequency of occurrence for each symbol in the
+                            input message is calculated and their corresponding
+                            probabilities are determined.
+                        </li>
+                        <br>
+                        <li>Step 2: Cumulative Probability Calculation
+                            The cumulative probability distribution is calculated for
+                            each symbol based on the symbol probabilities.</li>
+                            <br>
+                            <li>Step 3: Interval Mapping
+                                The input message is mapped to a single interval based on the cumulative probability distribution of the
+                                symbols</li>
+                                <br>
+                                <li>Step 4: Re-normalization
+                                    The interval is re-normalized after each symbol is
+                                    encoded or decoded to maintain the accuracy of the
+                                    probability distribution.</li>
+                    </ul>
+                    <br>
+                    <br>
+                    <h2>Image Compression Techniques</h2>
+                    <br>
+                    <br>
+                    <p>Let us consider a three letter alphabet A = a1, a2, a3 probabilities P(a1) = 0.4, P (a2) = 0.3. P (a3) = 0.3 The initial
+                        sub-intervals are [0.0, 0.4), [0.4, 0.7),[0.7, 1.0). If the first
+                        symbol encountered is, a2 then the sub-interval [0.4, 0.7) is
+                        considered. If the next two symbols are a3 and, a1 then the
+                        intervals get narrowed. This process is illustrated in Fig 9.
+                        Any number within the final range[0.4, 0.448) can be used
+                        to represent the sequence.
+                        <br>
+                        <br>
+                        <img class="Img1" src="img1.PNG" alt="">
+                        </p>
+                        <br>
+                        <br>
+                        <h2>Types of Arithmetic Coding Algorithms</h2>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <ul>
+                            <li>A variant of arithmetic coding where the probability
+                                model adapts as the data is encoded or decoded.
+                                </li>
+                                <br>
+                                <li> A method of entropy encoding where symbols are
+                                    encoded as ranges, rather than as discrete values.</li>
+                                    <br>
+                                    <li>A family of entropy encoding techniques that includes
+                                        arithmetic coding as a special case.</li>
+                                        <br>
+                                        <li>An adaptation of arithmetic coding that splits the encoding range into unequal partitions to more accurately
+                                            represent the probability distribution.</li>
+                        </ul>
+                        <br>
+                        <h2>The Mathematics</h2>
+                        <br>
+                        <br>
+                        <br>
+                        <p>The arithmetic code of the sequence x1, x2, x3....xn can be defined in
+                            the following way (we assume that the symbols come from the alphabet X= {a1, a2, a3....am})
+                            <br>
+                            <br>
+                            Give the set of all possible sequences the lexiographic order (which
+                            is generated by the relations αi < αj when i < j). The arithmetic
+                            code of x1.....xn can be defined as the binary representation of
+                             <br>
+                             <br>
+                            <img src="f1.png" alt=""></p>
+                            <br>
+                            <ul>
+                                <li>The code employs the cumulative distribution function as a representation for all sequences.</li>
+                                <br>
+                                <li>The allocation of bits to the code is directly proportional to the probability of x1 · · · xn</li>
+                                <br>
+                                <li>The arithmetic code is uniquely decodable with the aforementioned bit allocation.</li>
+                                <br>
+                                <li>The average number of bits per symbol approximates the entropy within a margin of 2/n.</li>
+                                <br>
+                                <li>The formula is infrequently used to calculate the arithmetic code.</li>
+                                <br>
+                                <li>The arithmetic code is computed incrementally</li>
+                                <br>
+                                <li>Computation of the arithmetic code can be implemented using finite precision arithmetic, 
+                                    with existing implementations utilizing 32 bits.</li>
+                                    <br>
+                                    <li>The probabilities are not predetermined; rather, they are incrementally 
+                                        adapted based on the statistical properties of the sequence.</li>
+                            </ul>
+                            <br>
+                            <br>
+                        <h2>Advantages</h2>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <ul>
+                            <li>Higher compression ratio: Arithmetic coding can
+                                achieve higher compression ratios than other techniques
+                                because it considers the probabilities of entire messages
+                                rather than just individual symbols.</li>
+                                <br>
+                                <li> No need for a codebook: Arithmetic coding does not
+                                    require a pre-built codebook like Huffman coding, making it
+                                    more flexible and adaptable to different data sets.</li>
+                                    <br>
+                                    <li>Better suited for large data sets: Arithmetic coding
+                                        is better suited for compressing large data sets because it can
+                                        handle long messages more efficiently than other techniques.</li>
+                                        <br>
+                                        <li>Multiple messages in a single stream: Arithmetic
+                                            coding can compress multiple messages into a single stream,
+                                            reducing the overhead associated with transmitting or storing
+                                            multiple compressed files.</li>
+                        </ul>
+                        <br>
+                        <h2>Applications of Arithmetic Coding</h2>
+                        <br>
+                        <br>
+                        <br>
+                        <p>Image and Video Compression with Arithmetic Coding</p>
+                        <br>
+                        <img class="Img1" src="img11.PNG" alt="">
+                        <br>
+                        <br>
+                        <p>Text and speech compression pie chart data</p>
+                        <br>
+                        <img class="Img1" src="img12.PNG" alt="">
+                        <br>
+                        <br>
+                        <br>
+                        <h2>Challenges</h2>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <ul>
+                            <li>Arithmetic coding is computationally expensive compared to other compression techniques which affect
+                                compression performance</li>
+                                <br>
+                                <li>Arithmetic coding requires a high level of mathematical and programming knowledge which can make the
+                                    implementation process complex.</li>
+                                    <br>
+                                    <li>Arithmetic coding requires large amounts of memory
+                                        to store the probability distribution and the encoded
+                                        data which can be a challenge for resource-constrained
+                                        devices.</li>
+                                        <br>
+                                        <li>Arithmetic coding is highly sensitive to any errors
+                                            or corruption in the input data, which can result in
+                                            significant loss of information during compression.</li>
+                        </ul>
+            </div>
+        </section>
+    </section>
+
+</body>
+</html> 

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Compression | Lempel-Ziv-Welch Compression</title>
+    <link rel="stylesheet" href="Huffman.css">
+    <style>
+  
+        
+    </style>
+</head>
+<body>
+    <div class="parallax"></div>
+    <section class="header">
+        <nav>
+            <a href="index.html"><img class="newImage"src="logo-final.jpeg" alt=""></a>
+            <div id="text">
+                <a href="index.html"><p>SC205 GROUP PROJECT</p></a>
+            </div>
+            <div class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li>
+                        <div class="dropdown">
+                            <button class="dropbtn">Analysis</button>
+                    <div class="dropdown-content">
+                        <a href="introduction.html">Introduction</a>
+                        <a href="ste.html">Shanon's Theory of Entropy</a>
+                        <a href="Huffman.html">Huffman Coding</a>
+                        <a href="rle.html">Run-Length Encoding</a>
+                        <a href="arithmetic.html">Arithmetic Coding</a>
+                        <a href="lzwc.html">Lempel-Ziv-Welch Compression</a>
+                    </div>
+                    <span class="dropdown-icon"></span>
+                    </div>
+                </li>
+                    <!-- <li><a href="Appraoch.html">Approach</a></li> -->
+                    <li><a href="application.html">Applications</a></li>
+                    <li><a href="Appraoch.html">Approach</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="attachments.html">Attachments</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="one">
+            <img src="zeros.png">
+            <img src="ones.png">
+            <img src="zeros.png">
+            <img src="ones.png">
+            <img src="zeros.png">
+            <img src="ones.png">
+            <img src="zeros.png">
+            <img src="ones.png">
+        </div>
+    
+    <div class="text-box">
+        <h1>Lempel-Ziv-Welch Compression</h1>
+        <p><em>Learning more with Lempel-Ziv-Welch !</em></p>
+        
+    </div>
+    <a href="#scroll">
+        <div class="scroll"></div>
+    </a>
+    </section>
+    <section id="scroll">
+        <section class="intro">
+            <div class="content">
+                <h2>Lempel-Ziv-Welch Compression</h2>
+                <br>
+                <br>
+                <p>Lempel-Ziv-Welch (LZW) is a lossless data compression
+                    algorithm that is commonly used for compressing text and
+                    other types of data. It was developed by Abraham Lempel,
+                    Jacob Ziv, and Terry Welch in the 1970s and has since
+                    become widely used in various applications.
+                    <br>
+                    <br>
+                    The LZW compression algorithm is dictionary-based and
+                        functions by constructing and preserving a dictionary of
+                        common patterns or sequences found in the input data. This
+                        leads to compression by replacing the identified patterns with
+                        shorter codes or references to the corresponding dictionary
+                        entries. The final compressed output comprises a sequence
+                        of these codes, which can be decoded to restore the initial
+                        data.
+                        <br>
+                    <br>
+                    However, the LZW algorithm ensures that each pattern
+                    is uniquely represented by a code, allowing for efficient
+                    encoding and decoding. The codes used by LZW can be of
+                    fixed or variable length, depending on the implementation.
+                <br>
+            <br>
+            LZW compression is particularly effective for data with
+            repetitive patterns, such as text files or images with regions of
+            uniform color. It can achieve significant compression ratios,
+            reducing the size of the data without any loss of information.
+            LZW has been widely used in file compression formats,
+            including GIF (Graphics Interchange Format) and the early
+            versions of the popular ZIP format.
+            </p>
+            <br>
+            <br>
+
+            <h2>Advantages</h2>
+            <br>
+            <br>
+            <br>
+            <br>
+            <ul>
+                <li>Lossless Compression: LZW is a lossless compression algorithm, meaning that the decompressed data is
+                    an exact replica of the original data. No information is
+                    lost during the compression process, which is important
+                    for applications where data integrity is crucial.</li>
+                    <br>
+                    <li>High Compression Ratios: LZW is particularly effective at compressing data with repetitive patterns. It can
+                        achieve significant compression ratios, reducing the size
+                        of the data while preserving its content. This makes it
+                        suitable for compressing text files, images with uniform
+                        areas, and other types of data with redundancy.</li>
+                        <br>
+                        <li>Efficient Encoding and Decoding: LZW utilizes a
+                            dictionary-based approach, which allows for efficient
+                            encoding and decoding of data. Once the dictionary is
+                            constructed, encoding and decoding operations can be
+                            performed quickly, making it suitable for real-time or
+                            on-the-fly compression applications.</li>
+                            <br>
+                            <li>Broad Range of Applications: LZW has been widely
+                                used in various applications and file formats. It was
+                                originally used in GIF image compression and has also
+                                been utilized in early versions of the ZIP file format.
+                                Its versatility makes it suitable for a wide range of data
+                                compression needs.</li>
+            </ul>
+            <br>
+            <br>
+            <h2>Disadvantages</h2>
+            <br>
+            <br>
+            <br>
+            <br>
+            <ul>
+                <li>Patent Restrictions: LZW was patented by IBM,
+                    which led to licensing requirements and restrictions on
+                    its use in some countries. However, as of my knowledge
+                    cutoff in September 2021, the patent had expired in
+                    many jurisdictions, allowing for unrestricted use.</li>
+                    <br>
+                    <li>Memory Overhead: LZW compression relies on
+                        maintaining a dictionary of patterns encountered in the
+                        data. As the dictionary grows larger, it requires more
+                        memory to store and use effectively. This can be a
+                        disadvantage when compressing very large data sets or
+                        in memory-constrained environments.</li>
+                        <br>
+                        <li> Compression Efficiency for Small Datasets: LZW
+                            compression may not be as efficient for very small
+                            datasets or data with minimal redundancy. The overhead
+                            of maintaining the dictionary and encoding the data can
+                            be relatively high compared to the achieved compression gains. In such cases, other compression algorithms
+                            may be more suitable.</li>
+                            <br>
+                            <li>Algorithmic Complexity: The LZW algorithm itself
+                                has a certain level of complexity, which can make it
+                                more challenging to implement and understand compared to simpler compression techniques. This complexity can also affect the performance and computational
+                                requirements of the compression and decompression
+                                processes.</li>
+            </ul>
+            <br>
+            <br>
+            <h2>Encoding and Decoding</h2>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <ul>
+                <li>Encoding Example</li>
+            </ul>
+            <p>Input: ”ABABABAABABA” <br>
+                Codes: [1, 2, 3, 2, 3] <br>
+                <br>
+                1. Start with an empty dictionary: ’A’: 1, ’B’: 2 <br>
+                <br>
+                2. Scanning the input data: <br>
+                - Encountering ’A’: ’A’ is in the dictionary. The current
+                pattern is ’A’. <br>
+                - Encountering ’B’: ’AB’ is not in the dictionary. 
+                Output the code for ’A’ (1) and add ’AB’ to the
+                dictionary with code 3.
+                - Encountering ’A’: ’A’ is in the dictionary. The current
+                pattern is ’A’. <br>
+                - Encountering ’B’: ’AB’ is in the dictionary with
+                code 3. The current pattern is ’AB’. <br>
+                - Encountering ’A’: ’ABA’ is not in the dictionary.
+                Output the code for ’AB’ (2) and add ’ABA’ to the
+                dictionary with code 4. <br>
+                <br>
+                3. The compressed output is: [1, 2, 3, 2, 3] <br></p>
+<br>
+                <ul>
+                    <li>Decoding Example</li>
+                </ul>
+                <p>Input (codes): [1, 2, 3, 2, 3] <br>
+                    <br>
+                    1. Start with an empty dictionary: ’A’: 1, ’B’: 2 <br>
+                    <br>
+                    2. Process the codes: <br>
+                    - Read code 1: Output ’A’, and add ’A’ to the dictionary
+                    with code 3. <br>
+                    - Read code 2: Output ’B’, and add ’B’ to the dictionary
+                    with code 4. <br>
+                    - Read code 3: Output ’A’, and add ’AB’ to the
+                    dictionary with code 5. <br>
+                    - Read code 2: Output ’B’, and add ’BA’ to the
+                    dictionary with code 6. <br>
+                    - Read code 3: Output ’A’. <br> 
+                    <br>
+                    3. The decoded output is: ”ABABABAABABA” <br></p>
+                    <p>In conclusion, LZW (Lempel-Ziv-Welch) compression is
+                        a widely used lossless compression algorithm that offers
+                        several advantages. It is particularly effective at compressing
+                        data with repetitive patterns, achieving high compression
+                        ratios while preserving the original data. LZW compression
+                        operates by creating a dictionary of patterns encountered
+                        in the data and replacing those patterns with codes. This
+                        dictionary-based approach allows for efficient encoding and
+                        decoding operations.</p>
+<br>
+                        <h2>The Mathematics</h2>
+                        <br>
+                        <br>
+                        <p>This approach utilizes a dictionary-based method for compressing images. The dictionary stores 
+                            combinations of recent symbols and assigns them unique codewords. Let's assume that the pixels
+                             from 1 to n have already been compressed.</p>
+                             <br>
+                             <ul>
+                                <li>Initially, we check if a codeword exists in the dictionary for pixel (n + 1)</li>
+                                <br>
+                                <li>If a codeword is found, we then check if there is a codeword for the two-pixel combination (n + 1, n + 2). We continue this process until we reach a pixel combination (n + 1, ..., n + m + 1) for which there is no codeword in the dictionary.</li>
+                                <br>
+                                <li>At this point, we have confirmed that there is a codeword for (n + 1, ..., n + m) but not for (n + 1, ..., n + m + 1). We output the codeword for (n + 1, ..., n + m) (consisting of m pixels) and insert a new codeword into the dictionary for (n + 1, ..., m, m + 1).</li>
+                                <br>
+                                <li>We update the value of n to n + m and return to step 1. This process continues until there are no pixels remaining.</li>
+                             </ul>
+                             <br>
+                             <br>
+            </div>
+        </section>
+    </section>

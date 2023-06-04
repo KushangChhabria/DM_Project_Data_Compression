@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Compression | Shanon's Theory of Entropy</title>
+    <link rel="stylesheet" href="ste.css">
+    <style>
+  
+        
+    </style>
+</head>
+<body>
+    <div class="parallax"></div>
+    <section class="header">
+        <nav>
+            <a href="index.html"><img class="newImage" src="logo-final.jpeg" alt=""></a>
+            <div id="text">
+                <a href="index.html"><p>SC205 GROUP PROJECT</p></a>
+            </div>
+            <div class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li>
+                        <div class="dropdown">
+                            <button class="dropbtn">Analysis</button>
+                    <div class="dropdown-content">
+                        <a href="introduction.html">Introduction</a>
+                        <a href="ste.html">Shanon's Theory of Entropy</a>
+                        <a href="Huffman.html">Huffman Coding</a>
+                        <a href="rle.html">Run-Length Encoding</a>
+                        <a href="arithmetic.html">Arithmetic Coding</a>
+                        <a href="lzwc.html">Lempel-Ziv-Welch Compression</a>
+                    </div>
+                    <span class="dropdown-icon"></span>
+                    </div>
+                </li>
+                    <!-- <li><a href="Appraoch.html">Approach</a></li> -->
+                    <li><a href="application.html">Applications</a></li>
+                    <li><a href="Appraoch.html">Approach</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="attachments.html">Attachments</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="one">
+            <img src="zeros.png">
+            <img src="ones.png">
+            <img src="zeros.png">
+            <img src="ones.png">
+            <img src="zeros.png">
+            <img src="ones.png">
+            <img src="zeros.png">
+            <img src="ones.png">
+        </div>
+    
+    <div class="text-box">
+        <h1>Shanon's Theory of Entropy</h1>
+        <p><em>The evolution of big data is a revolution in the modern world !</em></p>
+        
+    </div>
+    <a href="#scroll">
+        <div class="scroll"></div>
+    </a>
+    </section>
+    <section id="scroll">
+        <section class="intro">
+            <div class="content">
+                <h2>Shanon's Theory of Entropy</h2>
+                <br> 
+                <br>
+                <p>The Shannon entropy is a measure of uncertainty in a random process. In the case 
+                    of rolling element machinery, a system without any failures tends to produce a 
+                    more random signal, while a machine experiencing failures often exhibits a more 
+                    deterministic signal. Consequently, the Shannon entropy will vary between the two scenarios.
+                <br>
+            <br>
+            Shannon's theory introduces the concept of a data communication system consisting 
+            of three fundamental components: a data source, a communication channel, and a receiver.</p>
+                <p>Let's consider a random variable X that has a set of possible
+                     values represented by an alphabet χ = {a1, a2....an}, 
+                     and let p(x) represent the probability of each letter in the alphabet. 
+                     The entropy of X is defined as:
+                    <br>
+                <br>
+            <img src="f2.png" alt=""></p>
+            <p>When the logarithm is base 2, the entropy is measured in bits.
+                <br>
+                Our objective is to find a more compact representation for independent outcomes of X (x1, x2, ...xn) through compression.
+                 The following well-known theorem explores the limitations of such compression:
+                 <br>
+                 <br>
+                 Theorem: <br>
+                 <br>
+Given the probabilities of the letters in the alphabet χ = {α1, α2, ...} as p(x), 
+the average number of bits per symbol required by any lossless compression strategy 
+is always greater than or equal to the entropy H(X). <br>
+<br>
+Therefore, the entropy H(X) serves as a lower bound for achievable compression. <br>
+<br>
+In the context of data compression methods, the proximity of the average number 
+of bits per symbol to the entropy is used to measure their effectiveness. The goal is
+ to minimize the gap between the two measures, indicating a more efficient compression strategy. <br>
+ <br>
+ <br>
+ <img class="img" src="data:image/png;base64,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" alt="">
+            </p>
+            </div>
+        </section>
+    </section>
